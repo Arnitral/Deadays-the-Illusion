@@ -1,29 +1,31 @@
-[gd_scene load_steps=38 format=3 uid="uid://d1mlo6b0f7g0n"]
+[gd_scene format=3 uid="uid://d1mlo6b0f7g0n"]
 
 [ext_resource type="Environment" uid="uid://bwbsyfm72rvgn" path="res://Materials/environment.tres" id="1_awugs"]
 [ext_resource type="Script" uid="uid://b55qqy5sd0yjn" path="res://Scripts/mainmenu.gd" id="1_m56cs"]
 [ext_resource type="PackedScene" uid="uid://cia8rvv47dw08" path="res://Scenes/fog.tscn" id="3_qacki"]
-[ext_resource type="PackedScene" uid="uid://cn4bphj1vvxbg" path="res://Models/barracade.glb" id="4_72gy5"]
-[ext_resource type="PackedScene" uid="uid://kbmpvq74phhn" path="res://Models/landscape.glb" id="5_8wkh3"]
-[ext_resource type="Texture2D" uid="uid://dk4yloapmr7wf" path="res://Textures/landscape_texture_1.png" id="6_m56cs"]
-[ext_resource type="PackedScene" uid="uid://q5gysoqcdksq" path="res://Models/metallic_fence.glb" id="7_5kvh0"]
-[ext_resource type="PackedScene" uid="uid://bc3knin8ipg65" path="res://Models/metallic_fence_1.glb" id="8_l1qm6"]
+[ext_resource type="PackedScene" uid="uid://d3gp6ank6jpum" path="res://Models/barracade.glb" id="4_72gy5"]
+[ext_resource type="PackedScene" uid="uid://bokl5swfwhs8q" path="res://Models/landscape.glb" id="5_8wkh3"]
+[ext_resource type="Texture2D" uid="uid://bev2mrkx776cx" path="res://Textures/landscape_texture_1.png" id="6_m56cs"]
+[ext_resource type="PackedScene" uid="uid://dq8nfxp2mwubs" path="res://Models/metallic_fence.glb" id="7_5kvh0"]
+[ext_resource type="PackedScene" uid="uid://c8a2lvns447nf" path="res://Models/metallic_fence_1.glb" id="8_l1qm6"]
 [ext_resource type="PackedScene" uid="uid://djj4qlj7e60di" path="res://Scenes/Props/trash01.tscn" id="10_1nkd0"]
 [ext_resource type="PackedScene" uid="uid://t43gsxh51wdc" path="res://Scenes/Props/mailbox.tscn" id="11_l1owj"]
 [ext_resource type="PackedScene" uid="uid://d2nvmdke0v225" path="res://Scenes/main_menu_zombie.tscn" id="12_5kvh0"]
 [ext_resource type="PackedScene" uid="uid://bbyjplqh5p0ow" path="res://Scenes/Props/sign.tscn" id="12_220hi"]
 [ext_resource type="Script" uid="uid://erkft2jo8ex7" path="res://Scripts/tg_button.gd" id="13_bktvt"]
-[ext_resource type="Texture2D" uid="uid://cn103a5o86xlo" path="res://Textures/tg_logo.png" id="14_1nkd0"]
+[ext_resource type="Texture2D" uid="uid://ej6fyo3nqodh" path="res://Textures/tg_logo.png" id="14_1nkd0"]
 [ext_resource type="Script" uid="uid://dfaqlwxqluuul" path="res://Scripts/menu.gd" id="14_2jq6c"]
-[ext_resource type="Texture2D" uid="uid://d4mgvp7j4xyry" path="res://Textures/donate_icon.png" id="14_220hi"]
-[ext_resource type="FontFile" uid="uid://dl0w7m45pooel" path="res://Faithful.ttf" id="14_c7wuu"]
+[ext_resource type="Texture2D" uid="uid://0i68gl1r4hb0" path="res://Textures/donate_icon.png" id="14_220hi"]
+[ext_resource type="FontFile" uid="uid://dy5x0l0og3nv8" path="res://Faithful.ttf" id="14_c7wuu"]
 [ext_resource type="Script" uid="uid://dcdjyh2irkqsi" path="res://Scenes/language_button.gd" id="15_qacki"]
-[ext_resource type="AudioStream" uid="uid://b62dl3lnn0kb7" path="res://SFX/knp_click.mp3" id="16_8wkh3"]
+[ext_resource type="AudioStream" uid="uid://c6a5ma7yt2frr" path="res://SFX/knp_click.mp3" id="16_8wkh3"]
 [ext_resource type="Shader" uid="uid://cahl2jfjsvpnn" path="res://Scripts/post_processing.gdshader" id="16_72gy5"]
 [ext_resource type="PackedScene" uid="uid://coda47lkbngmn" path="res://Scenes/main_menu_house.tscn" id="17_8wkh3"]
 [ext_resource type="PackedScene" uid="uid://davv6erj5myjq" path="res://settings_menu.tscn" id="18_l1owj"]
 [ext_resource type="PackedScene" uid="uid://xyu7kcyb7wek" path="res://Scenes/main_menu_car.tscn" id="18_m56cs"]
-[ext_resource type="AudioStream" uid="uid://bdoglvcd5370x" path="res://SFX/Half-Life 2 — Ambient 2 (www.lightaudio.ru).mp3" id="19_5kvh0"]
+[ext_resource type="Texture2D" uid="uid://5d1absjxxl4f" path="res://Textures/bad_glow.png" id="19_8apyq"]
+[ext_resource type="AudioStream" uid="uid://cc7wv5vai17kj" path="res://Music/MainMenu.mp3" id="21_8apyq"]
+[ext_resource type="Script" uid="uid://b5ett5qtm7ucs" path="res://Scripts/MainMenu/version_label.gd" id="21_npf8s"]
 [ext_resource type="PackedScene" uid="uid://dba5u26luyj32" path="res://new_tree.tscn" id="22_l1owj"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_npf8s"]
@@ -47,27 +49,58 @@ line_spacing = 0.0
 font = ExtResource("14_c7wuu")
 font_size = 41
 
-[sub_resource type="LabelSettings" id="LabelSettings_2jq6c"]
-font = ExtResource("14_c7wuu")
-font_size = 131
+[sub_resource type="Gradient" id="Gradient_qacki"]
+offsets = PackedFloat32Array(0, 0.33333334, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.84900004, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_npf8s"]
+gradient = SubResource("Gradient_qacki")
 
 [sub_resource type="LabelSettings" id="LabelSettings_l1owj"]
 font = ExtResource("14_c7wuu")
-font_size = 50
+font_size = 30
 font_color = Color(1, 1, 1, 0.678431)
 
-[sub_resource type="LabelSettings" id="LabelSettings_72gy5"]
-font = ExtResource("14_c7wuu")
-font_size = 65
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qacki"]
+bg_color = Color(0, 0, 0, 0.5)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7204674, 0.72046757, 0.7204671, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_220hi"]
-font = ExtResource("14_c7wuu")
-font_size = 65
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8apyq"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8689846, 0.86898506, 0.8689847, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_8wkh3"]
-font = ExtResource("14_c7wuu")
-font_size = 60
-font_color = Color(0.749128, 0.0359046, 0.171486, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jnwcx"]
+bg_color = Color(0, 0, 0, 0.5)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.5336117, 0.4686132, 1)
+expand_margin_left = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npf8s"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.5336117, 0.4686132, 1)
+expand_margin_left = 5.0
+
+[sub_resource type="Gradient" id="Gradient_npf8s"]
+offsets = PackedFloat32Array(0, 0.2948718, 0.5897436)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8apyq"]
+gradient = SubResource("Gradient_npf8s")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8wkh3"]
 render_priority = 0
@@ -78,114 +111,114 @@ shader_parameter/dither_amount = 0.5
 flip_faces = true
 size = Vector2(2, 2)
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node3D" unique_id=162577589]
 script = ExtResource("1_m56cs")
 
-[node name="Environment" type="Node3D" parent="." groups=["navigation_mesh_source_group"]]
+[node name="Environment" type="Node3D" parent="." unique_id=1739789413 groups=["navigation_mesh_source_group"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.1086, -194.673, 581.828)
 
-[node name="WorldEnvironment2" type="WorldEnvironment" parent="Environment"]
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="Environment" unique_id=943117434]
 environment = ExtResource("1_awugs")
 camera_attributes = SubResource("CameraAttributesPractical_npf8s")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment/WorldEnvironment2"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment/WorldEnvironment2" unique_id=920606326]
 transform = Transform3D(1, 0, 0, 0, 0.250792, 0.968041, 0, -0.968041, 0.250792, 0, 206.693, 0)
 light_color = Color(0.934451, 0.679474, 0.275424, 1)
 light_energy = 1.647
 shadow_enabled = true
 shadow_bias = 0.0
 
-[node name="FogVolume" parent="Environment/WorldEnvironment2/DirectionalLight3D" instance=ExtResource("3_qacki")]
+[node name="FogVolume" parent="Environment/WorldEnvironment2/DirectionalLight3D" unique_id=145517266 instance=ExtResource("3_qacki")]
 transform = Transform3D(1.38326, 0, -3.49442e-07, 0, 1.04452, 0, 1.85e-07, 0, 1.38326, -73.5606, -530.271, -831.516)
 size = Vector3(1090.22, 156.871, 199.697)
 
-[node name="FogVolume2" parent="Environment/WorldEnvironment2/DirectionalLight3D" instance=ExtResource("3_qacki")]
+[node name="FogVolume2" parent="Environment/WorldEnvironment2/DirectionalLight3D" unique_id=1341991303 instance=ExtResource("3_qacki")]
 transform = Transform3D(1.38326, 0, 0, 0, 1.04452, 0, 0, 0, 1.38326, -116.261, -546.985, 754.567)
 size = Vector3(1028.48, 124.867, 199.697)
 
-[node name="barracade5" parent="Environment" instance=ExtResource("4_72gy5")]
+[node name="barracade5" parent="Environment" unique_id=1139783619 instance=ExtResource("4_72gy5")]
 transform = Transform3D(1.99824, 0.00852742, -3.46511, -0.00142646, 3.99999, 0.00902112, 3.46511, -0.00327089, 1.99824, 222.218, 197.104, -78.1677)
 
-[node name="barracade6" parent="Environment" instance=ExtResource("4_72gy5")]
+[node name="barracade6" parent="Environment" unique_id=1718510518 instance=ExtResource("4_72gy5")]
 transform = Transform3D(2, 0, 3.46409, 0, 3.99999, 0, -3.4641, 0, 2, 259.574, 197.34, -76.4288)
 
-[node name="landscape" parent="Environment" instance=ExtResource("5_8wkh3")]
+[node name="landscape" parent="Environment" unique_id=1927702713 instance=ExtResource("5_8wkh3")]
 transform = Transform3D(-4.23078e-07, 0, 9.67888, 0, 1.10697, 0, -9.67885, 0, -4.23076e-07, 302.132, 191.881, -318.569)
 
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="Environment/landscape"]
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Environment/landscape" unique_id=826285697]
 transform = Transform3D(48.8324, 0.0637311, -8.82608e-10, -3.11848, 0.997967, -2.76699e-08, -4.34807e-09, 2.78578e-09, 9.93258, 0.0948315, 2.81628, 40.0077)
 material_override = SubResource("StandardMaterial3D_1lg2m")
 mesh = SubResource("PlaneMesh_jnwcx")
 
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="Environment/landscape"]
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Environment/landscape" unique_id=32537405]
 transform = Transform3D(-1.69632e-06, 0, 9.91711, 0, 0.998443, 0, -38.8073, 0, -4.33491e-07, -39.4488, 4.1694, -5.99289)
 material_override = SubResource("StandardMaterial3D_yy81s")
 mesh = SubResource("PlaneMesh_jnwcx")
 
-[node name="Fence" type="Node3D" parent="Environment"]
+[node name="Fence" type="Node3D" parent="Environment" unique_id=1153458897]
 transform = Transform3D(-4.6897e-07, 0, -10.7288, 0, 10.7288, 0, 10.7288, 0, -4.68969e-07, 563.944, 195.986, -233.137)
 
-[node name="fence_down_left_1" parent="Environment/Fence" instance=ExtResource("7_5kvh0")]
+[node name="fence_down_left_1" parent="Environment/Fence" unique_id=1614389592 instance=ExtResource("7_5kvh0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.158619, -0.0696551, 0.0913925)
 
-[node name="metallic_fence_5" parent="Environment/Fence" instance=ExtResource("8_l1qm6")]
+[node name="metallic_fence_5" parent="Environment/Fence" unique_id=35683135 instance=ExtResource("8_l1qm6")]
 transform = Transform3D(-4.39163e-08, 0, -1.00469, 0, 1.00469, 0, 1.00469, 0, -4.39163e-08, 17.9513, 0.08655, 6.05113)
 
-[node name="metallic_fence_28" parent="Environment/Fence" instance=ExtResource("8_l1qm6")]
+[node name="metallic_fence_28" parent="Environment/Fence" unique_id=1872853460 instance=ExtResource("8_l1qm6")]
 transform = Transform3D(-4.39163e-08, 0, -1.00469, 0, 1.00469, 0, 1.00469, 0, -4.39163e-08, 17.9512, 0.08655, 2.00631)
 
-[node name="metallic_fence_29" parent="Environment/Fence" instance=ExtResource("8_l1qm6")]
+[node name="metallic_fence_29" parent="Environment/Fence" unique_id=1820587969 instance=ExtResource("8_l1qm6")]
 transform = Transform3D(-4.39163e-08, 0, -1.00469, 0, 1.00469, 0, 1.00469, 0, -4.39163e-08, 17.9513, 0.08655, 10.0634)
 
-[node name="metallic_fence_30" parent="Environment/Fence" instance=ExtResource("8_l1qm6")]
+[node name="metallic_fence_30" parent="Environment/Fence" unique_id=2087078520 instance=ExtResource("8_l1qm6")]
 transform = Transform3D(-4.39163e-08, 0, -1.00469, 0, 1.00469, 0, 1.00469, 0, -4.39163e-08, 17.9513, 0.08655, 14.039)
 
-[node name="metallic_fence_31" parent="Environment/Fence" instance=ExtResource("8_l1qm6")]
+[node name="metallic_fence_31" parent="Environment/Fence" unique_id=73105296 instance=ExtResource("8_l1qm6")]
 transform = Transform3D(-4.39163e-08, 0, -1.00469, 0, 1.00469, 0, 1.00469, 0, -4.39163e-08, 17.9513, 0.08655, 18.0513)
 
-[node name="metallic_fence_32" parent="Environment/Fence" instance=ExtResource("8_l1qm6")]
+[node name="metallic_fence_32" parent="Environment/Fence" unique_id=2090414658 instance=ExtResource("8_l1qm6")]
 transform = Transform3D(-4.39163e-08, 0, -1.00469, 0, 1.00469, 0, 1.00469, 0, -4.39163e-08, 17.9513, 0.08655, 22.053)
 
-[node name="metallic_fence_33" parent="Environment/Fence" instance=ExtResource("8_l1qm6")]
+[node name="metallic_fence_33" parent="Environment/Fence" unique_id=774148606 instance=ExtResource("8_l1qm6")]
 transform = Transform3D(1.00469, 0, -1.75665e-07, 0, 1.00469, 0, 1.75665e-07, 0, 1.00469, 3.95136, 0.000760473, 0.0266685)
 
-[node name="metallic_fence_34" parent="Environment/Fence" instance=ExtResource("8_l1qm6")]
+[node name="metallic_fence_34" parent="Environment/Fence" unique_id=855959589 instance=ExtResource("8_l1qm6")]
 transform = Transform3D(1.00469, 0, -1.75665e-07, 0, 1.00469, 0, 1.75665e-07, 0, 1.00469, 7.96364, 0.000760473, 0.0266685)
 
-[node name="metallic_fence_35" parent="Environment/Fence" instance=ExtResource("8_l1qm6")]
+[node name="metallic_fence_35" parent="Environment/Fence" unique_id=1591769118 instance=ExtResource("8_l1qm6")]
 transform = Transform3D(1.00469, 0, -1.75665e-07, 0, 1.00469, 0, 1.75665e-07, 0, 1.00469, 12.0047, 0.000760473, 0.0266457)
 
-[node name="metallic_fence_36" parent="Environment/Fence" instance=ExtResource("8_l1qm6")]
+[node name="metallic_fence_36" parent="Environment/Fence" unique_id=602229540 instance=ExtResource("8_l1qm6")]
 transform = Transform3D(1.00469, 0, -1.75665e-07, 0, 1.00469, 0, 1.75665e-07, 0, 1.00469, 16.017, 0.000760473, 0.0266457)
 
-[node name="metallic_fence2" parent="Environment/Fence" instance=ExtResource("7_5kvh0")]
+[node name="metallic_fence2" parent="Environment/Fence" unique_id=1828286119 instance=ExtResource("7_5kvh0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -16.228, -0.177265, 50.7645)
 
-[node name="metallic_fence3" parent="Environment/Fence" instance=ExtResource("7_5kvh0")]
+[node name="metallic_fence3" parent="Environment/Fence" unique_id=434896605 instance=ExtResource("7_5kvh0")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 18.1241, 0.0562949, 36.2945)
 
-[node name="metallic_fence_19" parent="Environment/Fence" instance=ExtResource("8_l1qm6")]
+[node name="metallic_fence_19" parent="Environment/Fence" unique_id=1205768426 instance=ExtResource("8_l1qm6")]
 transform = Transform3D(1.31749e-07, 0, -1.00469, 0, 1.00469, 0, 1.00469, 0, 1.31749e-07, 18.1239, 0.0175254, 44.3101)
 
-[node name="metallic_fence_20" parent="Environment/Fence" instance=ExtResource("8_l1qm6")]
+[node name="metallic_fence_20" parent="Environment/Fence" unique_id=1660175403 instance=ExtResource("8_l1qm6")]
 transform = Transform3D(1.31749e-07, 0, -1.00469, 0, 1.00469, 0, 1.00469, 0, 1.31749e-07, 18.1239, 0.0303681, 40.2978)
 
-[node name="metallic_fence_21" parent="Environment/Fence" instance=ExtResource("8_l1qm6")]
+[node name="metallic_fence_21" parent="Environment/Fence" unique_id=1459179230 instance=ExtResource("8_l1qm6")]
 transform = Transform3D(1.31749e-07, 0, -1.00469, 0, 1.00469, 0, 1.00469, 0, 1.31749e-07, 18.1215, 0.00657537, 48.3199)
 
-[node name="trash04" parent="Environment/Fence" instance=ExtResource("10_1nkd0")]
+[node name="trash04" parent="Environment/Fence" unique_id=1895283168 instance=ExtResource("10_1nkd0")]
 transform = Transform3D(-1.68708, 0, -1.47489e-07, 0, 1.68708, 0, 1.47489e-07, 0, -1.68708, -0.828548, 0.0419731, 7.76234)
 
-[node name="Mailbox3" parent="Environment/Fence" instance=ExtResource("11_l1owj")]
+[node name="Mailbox3" parent="Environment/Fence" unique_id=62892019 instance=ExtResource("11_l1owj")]
 transform = Transform3D(-0.436323, 0, -6.58829e-08, 0, 0.436323, 0, 6.58829e-08, 0, -0.436323, -1.51009, -0.0355711, 17.5614)
 
-[node name="Sign" parent="Environment" instance=ExtResource("12_220hi")]
+[node name="Sign" parent="Environment" unique_id=2576577 instance=ExtResource("12_220hi")]
 transform = Transform3D(-1.50887, 0, -6.32967, 0.361162, 6.49642, -0.0860942, 6.31935, -0.371282, -1.50641, 552.217, 195.74, -249.516)
 
-[node name="Sign2" parent="Environment" instance=ExtResource("12_220hi")]
+[node name="Sign2" parent="Environment" unique_id=1560091314 instance=ExtResource("12_220hi")]
 transform = Transform3D(-6.49456, 0.358632, -0.183153, 0.361162, 6.49642, -0.0860942, 0.178109, -0.0960949, -6.50387, 188.342, 195.74, -45.1464)
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1459508156]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -193,21 +226,22 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1932024750]
 handle_input_locally = false
 size = Vector2i(1280, 720)
 render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1905448290]
 transform = Transform3D(-0.846203, 0, -0.532862, 0, 1, 0, 0.532862, 0, -0.846203, 243.43, 14.0641, 306.665)
 fov = 51.1
 
-[node name="MainMenuZombie" parent="SubViewportContainer/SubViewport" instance=ExtResource("12_5kvh0")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 264.094, 2.0066, 320.267)
+[node name="MainMenuZombie" parent="SubViewportContainer/SubViewport" unique_id=2032378027 instance=ExtResource("12_5kvh0")]
+transform = Transform3D(-0.9590478, 0, -0.28324556, 0, 1, 0, 0.28324556, 0, -0.9590478, 246.73222, -1.5189242, 321.18)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1399448106]
 
-[node name="TgButton" type="ColorRect" parent="CanvasLayer"]
+[node name="TgButton" type="ColorRect" parent="CanvasLayer" unique_id=232350326]
+visible = false
 custom_minimum_size = Vector2(100, 100)
 anchors_preset = 2
 anchor_top = 1.0
@@ -218,7 +252,7 @@ grow_vertical = 0
 color = Color(0, 0, 0, 0.588235)
 script = ExtResource("13_bktvt")
 
-[node name="Button" type="Button" parent="CanvasLayer/TgButton"]
+[node name="Button" type="Button" parent="CanvasLayer/TgButton" unique_id=713710618]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -230,7 +264,8 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="DonationButton" type="ColorRect" parent="CanvasLayer"]
+[node name="DonationButton" type="ColorRect" parent="CanvasLayer" unique_id=254212142]
+visible = false
 custom_minimum_size = Vector2(100, 100)
 anchors_preset = 2
 anchor_top = 1.0
@@ -242,7 +277,7 @@ grow_vertical = 0
 color = Color(0, 0, 0, 0.588235)
 script = ExtResource("13_bktvt")
 
-[node name="Button" type="Button" parent="CanvasLayer/DonationButton"]
+[node name="Button" type="Button" parent="CanvasLayer/DonationButton" unique_id=365553209]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -254,14 +289,15 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="LanguageButton" type="ColorRect" parent="CanvasLayer"]
+[node name="LanguageButton" type="ColorRect" parent="CanvasLayer" unique_id=1418121010]
+visible = false
 custom_minimum_size = Vector2(50, 50)
 offset_right = 50.0
 offset_bottom = 50.0
 color = Color(0, 0, 0, 0.588235)
 script = ExtResource("15_qacki")
 
-[node name="Button" type="Button" parent="CanvasLayer/LanguageButton"]
+[node name="Button" type="Button" parent="CanvasLayer/LanguageButton" unique_id=1818007175]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -272,7 +308,7 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Label" type="Label" parent="CanvasLayer/LanguageButton/Button"]
+[node name="Label" type="Label" parent="CanvasLayer/LanguageButton/Button" unique_id=85035602]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -284,245 +320,245 @@ label_settings = SubResource("LabelSettings_npf8s")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Menu" type="Control" parent="CanvasLayer"]
+[node name="Menu" type="Control" parent="CanvasLayer" unique_id=1775536191]
 layout_mode = 3
-anchors_preset = 11
-anchor_left = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -516.0
-offset_bottom = -1.0
-grow_horizontal = 0
+grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8
 script = ExtResource("14_2jq6c")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Menu"]
+[node name="BlackGlow" type="TextureRect" parent="CanvasLayer/Menu" unique_id=1404703573]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 9
 anchor_bottom = 1.0
-offset_bottom = 4.0
-grow_horizontal = 2
+offset_right = 810.0
 grow_vertical = 2
-color = Color(0, 0, 0, 0.717647)
+mouse_filter = 2
+texture = SubResource("GradientTexture1D_npf8s")
 
-[node name="Label" type="Label" parent="CanvasLayer/Menu/ColorRect"]
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Menu" unique_id=972850040]
+visible = false
+modulate = Color(0.87954104, 0.66221565, 0.6532564, 0.5803922)
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 2.0
-offset_top = 26.0
-offset_right = 2.0
-offset_bottom = 180.0
-grow_horizontal = 2
-text = "Deadays"
-label_settings = SubResource("LabelSettings_2jq6c")
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = -464.0
+offset_top = 27.0
+offset_right = 686.0
+offset_bottom = 121.0
+texture = ExtResource("19_8apyq")
+expand_mode = 1
 
-[node name="VersionLabel" type="Label" parent="CanvasLayer/Menu/ColorRect"]
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/Menu" unique_id=946499163]
+visible = false
+modulate = Color(1, 1, 1, 0.5803922)
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -121.0
-offset_top = -58.0
-offset_right = -5.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "v0.7_hotfix"
-label_settings = SubResource("LabelSettings_l1owj")
-horizontal_alignment = 2
-vertical_alignment = 2
+offset_left = -464.0
+offset_top = 43.0
+offset_right = 327.0
+offset_bottom = 102.0
+texture = ExtResource("19_8apyq")
+expand_mode = 1
 
-[node name="StartButton" type="Button" parent="CanvasLayer/Menu/ColorRect"]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 2.0
-offset_top = -104.5
-offset_right = 2.0
-offset_bottom = -4.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="StartLabel" type="Label" parent="CanvasLayer/Menu/ColorRect/StartButton"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -31.0
-offset_bottom = 31.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "START_GAME"
-label_settings = SubResource("LabelSettings_72gy5")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SettingsButton" type="Button" parent="CanvasLayer/Menu/ColorRect"]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 2.0
-offset_top = -3.0
-offset_right = 2.0
-offset_bottom = 97.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SettingsLabel" type="Label" parent="CanvasLayer/Menu/ColorRect/SettingsButton"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -31.0
-offset_bottom = 31.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "SETTINGS"
-label_settings = SubResource("LabelSettings_220hi")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ExitButton" type="Button" parent="CanvasLayer/Menu/ColorRect"]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 2.0
-offset_top = 96.0
-offset_right = 2.0
-offset_bottom = 196.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label2" type="Label" parent="CanvasLayer/Menu/ColorRect/ExitButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "EXIT_GAME"
-label_settings = SubResource("LabelSettings_8wkh3")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="KnpClick" type="AudioStreamPlayer" parent="CanvasLayer/Menu"]
+[node name="KnpClick" type="AudioStreamPlayer" parent="CanvasLayer/Menu" unique_id=494108803]
 stream = ExtResource("16_8wkh3")
 volume_db = -10.0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Menu"]
-stream = ExtResource("19_5kvh0")
-volume_db = -40.95
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Menu" unique_id=1383588704]
+stream = ExtResource("21_8apyq")
 autoplay = true
 parameters/looping = true
 
-[node name="SettingsMenu" parent="CanvasLayer" node_paths=PackedStringArray("menu") instance=ExtResource("18_l1owj")]
-menu = NodePath("../Menu")
+[node name="VersionLabel" type="Label" parent="CanvasLayer/Menu" unique_id=679080501]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+offset_right = 148.0
+offset_bottom = 4.0
+grow_vertical = 0
+text = " v1.0. . .IlLuSiOn"
+label_settings = SubResource("LabelSettings_l1owj")
+vertical_alignment = 2
+script = ExtResource("21_npf8s")
 
-[node name="ScreenQuad" type="MeshInstance3D" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Menu" unique_id=832824649]
+layout_mode = 1
+offset_left = 43.0
+offset_top = 38.0
+offset_right = 769.0
+offset_bottom = 190.0
+theme_override_fonts/normal_font = ExtResource("14_c7wuu")
+theme_override_fonts/bold_font = ExtResource("14_c7wuu")
+theme_override_fonts/bold_italics_font = ExtResource("14_c7wuu")
+theme_override_fonts/italics_font = ExtResource("14_c7wuu")
+theme_override_fonts/mono_font = ExtResource("14_c7wuu")
+theme_override_font_sizes/normal_font_size = 75
+bbcode_enabled = true
+text = "Deadays
+[color=red][shake rate=20.0 level=5 connected=1]the Illusion[/shake][/color]"
+fit_content = true
+scroll_active = false
+
+[node name="VBC" type="VBoxContainer" parent="CanvasLayer/Menu" unique_id=1028588927]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 51.0
+offset_top = 117.0
+offset_right = 430.0
+grow_vertical = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="SelectChapter" type="Button" parent="CanvasLayer/Menu/VBC" unique_id=1218580554]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("14_c7wuu")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8apyq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qacki")
+text = "SELECT CHAPTER"
+alignment = 0
+expand_icon = true
+
+[node name="Settings" type="Button" parent="CanvasLayer/Menu/VBC" unique_id=711996490]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("14_c7wuu")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8apyq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qacki")
+text = "SETTINGS"
+alignment = 0
+expand_icon = true
+
+[node name="Credits" type="Button" parent="CanvasLayer/Menu/VBC" unique_id=2090601299]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("14_c7wuu")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8apyq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qacki")
+text = "CREDITS"
+alignment = 0
+expand_icon = true
+
+[node name="Quit" type="Button" parent="CanvasLayer/Menu/VBC" unique_id=1933990285]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("14_c7wuu")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jnwcx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_npf8s")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qacki")
+text = "PUT AN END TO"
+alignment = 0
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Menu" unique_id=1660984115]
+layout_mode = 1
+offset_left = 43.0
+offset_top = 113.0
+offset_right = 392.0
+offset_bottom = 117.0
+texture = SubResource("GradientTexture1D_8apyq")
+expand_mode = 1
+
+[node name="SettingsMenu" parent="CanvasLayer" unique_id=1891434593 instance=ExtResource("18_l1owj")]
+visible = false
+offset_left = 306.0
+
+[node name="ScreenQuad" type="MeshInstance3D" parent="." unique_id=364395088]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -35.4833, 0)
 material_override = SubResource("ShaderMaterial_8wkh3")
 extra_cull_margin = 16384.0
 ignore_occlusion_culling = true
 mesh = SubResource("QuadMesh_m56cs")
 
-[node name="MainMenuHouse" parent="." instance=ExtResource("17_8wkh3")]
+[node name="MainMenuHouse" parent="." unique_id=963322277 instance=ExtResource("17_8wkh3")]
 transform = Transform3D(-13.0893, 0, -6.24146e-07, 0, 13.0893, 0, 6.24146e-07, 0, -13.0893, 336.462, 2.47001, 387.935)
 
 [node name="house3" parent="MainMenuHouse" index="1"]
 visible = false
 
-[node name="MainMenuCar" parent="." instance=ExtResource("18_m56cs")]
+[node name="MainMenuCar" parent="." unique_id=216353587 instance=ExtResource("18_m56cs")]
 transform = Transform3D(-4.60391e-07, 0, 10.5325, 0, 10.5325, 0, -10.5325, 0, -4.60391e-07, 258.601, 2.41831, 384.783)
 
-[node name="tree" parent="." instance=ExtResource("22_l1owj")]
-transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 257.997, 10, 556.742)
+[node name="Trees" type="Node3D" parent="." unique_id=659797767]
 
-[node name="tree2" parent="." instance=ExtResource("22_l1owj")]
-transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 297.997, 10, 556.742)
-
-[node name="tree3" parent="." instance=ExtResource("22_l1owj")]
-transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 336.551, 10, 556.742)
-
-[node name="tree4" parent="." instance=ExtResource("22_l1owj")]
-transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 371.741, 10, 556.742)
-
-[node name="tree5" parent="." instance=ExtResource("22_l1owj")]
-transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 406.507, 10, 556.742)
-
-[node name="tree6" parent="." instance=ExtResource("22_l1owj")]
-transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 406.507, 10, 556.742)
-
-[node name="tree7" parent="." instance=ExtResource("22_l1owj")]
-transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 445.29, 10, 556.742)
-
-[node name="tree8" parent="." instance=ExtResource("22_l1owj")]
-transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 485.29, 10, 556.742)
-
-[node name="tree9" parent="." instance=ExtResource("22_l1owj")]
-transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 525.29, 10, 556.742)
-
-[node name="tree10" parent="." instance=ExtResource("22_l1owj")]
-transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 532.972, 10, 541.861)
-
-[node name="tree11" parent="." instance=ExtResource("22_l1owj")]
-transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 532.972, 10, 521.563)
-
-[node name="tree12" parent="." instance=ExtResource("22_l1owj")]
-transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 532.972, 10, 501.718)
-
-[node name="tree13" parent="." instance=ExtResource("22_l1owj")]
+[node name="tree13" parent="Trees" unique_id=1783929361 instance=ExtResource("22_l1owj")]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 532.972, 10, 480.072)
 
-[node name="tree14" parent="." instance=ExtResource("22_l1owj")]
+[node name="tree" parent="Trees" unique_id=810826921 instance=ExtResource("22_l1owj")]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 257.997, 10, 556.742)
+
+[node name="tree2" parent="Trees" unique_id=1470774454 instance=ExtResource("22_l1owj")]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 297.997, 10, 556.742)
+
+[node name="tree3" parent="Trees" unique_id=1632296182 instance=ExtResource("22_l1owj")]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 336.551, 10, 556.742)
+
+[node name="tree4" parent="Trees" unique_id=1125689713 instance=ExtResource("22_l1owj")]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 371.741, 10, 556.742)
+
+[node name="tree5" parent="Trees" unique_id=1371724734 instance=ExtResource("22_l1owj")]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 406.507, 10, 556.742)
+
+[node name="tree6" parent="Trees" unique_id=1604804086 instance=ExtResource("22_l1owj")]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 406.507, 10, 556.742)
+
+[node name="tree7" parent="Trees" unique_id=1551434723 instance=ExtResource("22_l1owj")]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 445.29, 10, 556.742)
+
+[node name="tree8" parent="Trees" unique_id=2087725328 instance=ExtResource("22_l1owj")]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 485.29, 10, 556.742)
+
+[node name="tree9" parent="Trees" unique_id=772575030 instance=ExtResource("22_l1owj")]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 525.29, 10, 556.742)
+
+[node name="tree10" parent="Trees" unique_id=861244255 instance=ExtResource("22_l1owj")]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 532.972, 10, 541.861)
+
+[node name="tree11" parent="Trees" unique_id=260082232 instance=ExtResource("22_l1owj")]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 532.972, 10, 521.563)
+
+[node name="tree12" parent="Trees" unique_id=1784830007 instance=ExtResource("22_l1owj")]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 532.972, 10, 501.718)
+
+[node name="tree14" parent="Trees" unique_id=573170927 instance=ExtResource("22_l1owj")]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 532.972, 10, 458.88)
 
-[node name="tree15" parent="." instance=ExtResource("22_l1owj")]
+[node name="tree15" parent="Trees" unique_id=1291592844 instance=ExtResource("22_l1owj")]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 532.972, 10, 431.828)
 
-[node name="tree16" parent="." instance=ExtResource("22_l1owj")]
+[node name="tree16" parent="Trees" unique_id=774604932 instance=ExtResource("22_l1owj")]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 532.972, 10, 431.828)
 
-[node name="tree17" parent="." instance=ExtResource("22_l1owj")]
+[node name="tree17" parent="Trees" unique_id=1136861143 instance=ExtResource("22_l1owj")]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 532.972, 10, 406.51)
 
-[node name="tree18" parent="." instance=ExtResource("22_l1owj")]
+[node name="tree18" parent="Trees" unique_id=794741914 instance=ExtResource("22_l1owj")]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 532.972, 10, 385.547)
 
-[node name="tree19" parent="." instance=ExtResource("22_l1owj")]
+[node name="tree19" parent="Trees" unique_id=213166087 instance=ExtResource("22_l1owj")]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 532.972, 10, 362.67)
 
-[node name="tree20" parent="." instance=ExtResource("22_l1owj")]
+[node name="tree20" parent="Trees" unique_id=1042057182 instance=ExtResource("22_l1owj")]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 532.972, 10, 338.457)
 
 [connection signal="pressed" from="CanvasLayer/TgButton/Button" to="CanvasLayer/TgButton" method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/DonationButton/Button" to="CanvasLayer/DonationButton" method="_on_donate_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/LanguageButton/Button" to="CanvasLayer/LanguageButton" method="_on_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer/Menu/ColorRect/StartButton" to="CanvasLayer/Menu" method="_on_start_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/Menu/ColorRect/StartButton" to="CanvasLayer/Menu" method="_on_start_button_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer/Menu/ColorRect/StartButton" to="CanvasLayer/Menu" method="_on_start_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer/Menu/ColorRect/SettingsButton" to="CanvasLayer/Menu" method="_on_settings_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/Menu/ColorRect/SettingsButton" to="CanvasLayer/Menu" method="_on_settings_button_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer/Menu/ColorRect/SettingsButton" to="CanvasLayer/Menu" method="_on_settings_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer/Menu/ColorRect/ExitButton" to="CanvasLayer/Menu" method="_on_exit_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/Menu/ColorRect/ExitButton" to="CanvasLayer/Menu" method="_on_exit_button_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer/Menu/ColorRect/ExitButton" to="CanvasLayer/Menu" method="_on_exit_button_pressed"]
 
 [editable path="CanvasLayer/SettingsMenu"]
 [editable path="MainMenuHouse"]

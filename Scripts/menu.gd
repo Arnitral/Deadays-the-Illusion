@@ -11,47 +11,33 @@ var game_scene = null
 
 func _ready():
 	ResourceLoader.load_threaded_request("res://Scenes/world.tscn")
-	
-func _on_start_button_pressed() -> void:
-	
-	if ResourceLoader.load_threaded_get_status("res://Scenes/world.tscn") == ResourceLoader.THREAD_LOAD_LOADED:
-		game_scene = ResourceLoader.load_threaded_get("res://Scenes/world.tscn")
-		get_tree().change_scene_to_packed(game_scene)
+	$VBC/Quit.pressed.connect(func():
+		get_tree().quit()
+	)
+	$VBC/Settings.pressed.connect(func():
+		settings_menu.visible = !settings_menu.visible
+	)
+	$VBC/Credits.pressed.connect(func():
+		pass
+	)
+	$VBC/SelectChapter.pressed.connect(func():
+		pass
+	)
+	# effectss
+	$VBC/Quit.mouse_entered.connect(func():
+		knp_click.play()
+	)
+	$VBC/Settings.mouse_entered.connect(func():
+		knp_click.play()
+	)
+	$VBC/Credits.mouse_entered.connect(func():
+		knp_click.play()
+	)
+	$VBC/SelectChapter.mouse_entered.connect(func():
+		knp_click.play()
+	)
 
-
-func _on_exit_button_pressed() -> void:
-	get_tree().quit()
-
-
-func _on_start_button_mouse_entered() -> void:
-	start_label.label_settings.font_color = Color(0.65, 0.65, 0.65, 1)
-	knp_click.play()
-
-
-func _on_start_button_mouse_exited() -> void:
-	start_label.label_settings.font_color = Color(1, 1, 1, 1)
-
-
-func _on_exit_button_mouse_entered() -> void:
-	label_2.label_settings.font_color = Color(0.65, 0, 0, 1)
-	knp_click.play()
-
-
-func _on_exit_button_mouse_exited() -> void:
-	label_2.label_settings.font_color = Color(0.74, 0.03, 0.17, 1)
-
-
-
-func _on_settings_button_pressed() -> void:
-	hide()
-	settings_menu.show()
-
-
-func _on_settings_button_mouse_entered() -> void:
-	settings_label.label_settings.font_color = Color(0.65, 0.65, 0.65, 1)
-
-	knp_click.play()
-
-
-func _on_settings_button_mouse_exited() -> void:
-	settings_label.label_settings.font_color = Color(1, 1, 1, 1)
+#func _on_start_button_pressed() -> void:
+	#if ResourceLoader.load_threaded_get_status("res://Scenes/world.tscn") == ResourceLoader.THREAD_LOAD_LOADED:
+		#game_scene = ResourceLoader.load_threaded_get("res://Scenes/world.tscn")
+		#get_tree().change_scene_to_packed(game_scene)

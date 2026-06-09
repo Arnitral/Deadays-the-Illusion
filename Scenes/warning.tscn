@@ -2,18 +2,443 @@
 
 [ext_resource type="Script" uid="uid://byqidx4ne1l2b" path="res://Scripts/warning.gd" id="1_k7nv6"]
 [ext_resource type="FontFile" uid="uid://dy5x0l0og3nv8" path="res://Faithful.ttf" id="1_osvl0"]
+[ext_resource type="AudioStream" uid="uid://ixxf712ffqhv" path="res://Music/Warning.mp3" id="3_hme1k"]
+[ext_resource type="AudioStream" uid="uid://dwmhq1nnygau1" path="res://SFX/Buttons/warning_s_continue.wav" id="3_qbdda"]
+[ext_resource type="AudioStream" uid="uid://cxjetvdkegr5v" path="res://SFX/Buttons/warning_s_quit.wav" id="4_rwgkf"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_k7nv6"]
-font = ExtResource("1_osvl0")
-font_size = 90
-font_color = Color(1, 0, 0, 1)
-outline_color = Color(0.5530749, 0, 0.00087439135, 1)
-shadow_size = 10
-shadow_color = Color(0.57254905, 0, 0.011764706, 0.50980395)
-stacked_shadow_count = 1
-stacked_shadow_0/offset = Vector2(-1, -1)
-stacked_shadow_0/color = Color(0.25533903, 6.0614667e-07, 0.0024654495, 0.50980395)
-stacked_shadow_0/outline_size = 10
+[sub_resource type="Animation" id="Animation_rwgkf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Continue/..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qbdda"]
+resource_name = "entered"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Continue/..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(30, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rwgkf"]
+_data = {
+&"RESET": SubResource("Animation_rwgkf"),
+&"entered": SubResource("Animation_qbdda")
+}
+
+[sub_resource type="Animation" id="Animation_i3gxu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Quit/..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tuqh2"]
+resource_name = "entered"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Quit/..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-30, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i3gxu"]
+_data = {
+&"RESET": SubResource("Animation_i3gxu"),
+&"entered": SubResource("Animation_tuqh2")
+}
+
+[sub_resource type="Gradient" id="Gradient_k7nv6"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hme1k"]
+gradient = SubResource("Gradient_k7nv6")
+
+[sub_resource type="Animation" id="Animation_hme1k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button1/Continue:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button2/Quit:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RichTextLabel2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RichTextLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/TextureRect:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1002, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/ColorRect:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1001, -500)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Control:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Button1:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Button2:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("RichTextLabel:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("RichTextLabel2:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("RichTextLabel2:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_b3kca"]
+resource_name = "contunue"
+length = 1.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RichTextLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.25, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RichTextLabel:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.75),
+"transitions": PackedFloat32Array(1, -2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0.25, 0.25)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RichTextLabel2:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.25),
+"transitions": PackedFloat32Array(1, -2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0.3, 0.3)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RichTextLabel2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.25),
+"transitions": PackedFloat32Array(1, -2, 1),
+"update": 0,
+"values": [0.0, 0.0, 3.141592653589793]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RichTextLabel2:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.25),
+"transitions": PackedFloat32Array(1, -2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+
+[sub_resource type="Animation" id="Animation_k7nv6"]
+resource_name = "starter_anim"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button1/Continue:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.7, 3.05),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button2/Quit:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5, 2.85),
+"transitions": PackedFloat32Array(1, 2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RichTextLabel2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RichTextLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.75, 1.5),
+"transitions": PackedFloat32Array(1, -2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/TextureRect:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1002, -500), Vector2(-1002, -500), Vector2(-1002, 1000)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/ColorRect:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1001, -500), Vector2(-1001, -500), Vector2(-1001, 1000)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Control:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hme1k"]
+_data = {
+&"RESET": SubResource("Animation_hme1k"),
+&"contunue": SubResource("Animation_b3kca"),
+&"starter_anim": SubResource("Animation_k7nv6")
+}
 
 [node name="Warning" type="Control" unique_id=1339429398]
 layout_mode = 3
@@ -33,42 +458,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="." unique_id=599108331]
-visible = false
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 90.0
-offset_bottom = 181.0
-grow_horizontal = 2
-text = "[wave amp=8.0 freq=1.5] WARNING!"
-label_settings = SubResource("LabelSettings_k7nv6")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1705183462]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 77.0
-offset_bottom = 234.0
-grow_horizontal = 2
-theme_override_fonts/normal_font = ExtResource("1_osvl0")
-theme_override_fonts/bold_font = ExtResource("1_osvl0")
-theme_override_fonts/bold_italics_font = ExtResource("1_osvl0")
-theme_override_fonts/italics_font = ExtResource("1_osvl0")
-theme_override_fonts/mono_font = ExtResource("1_osvl0")
-theme_override_font_sizes/normal_font_size = 90
-theme_override_font_sizes/bold_font_size = 90
-theme_override_font_sizes/bold_italics_font_size = 90
-theme_override_font_sizes/italics_font_size = 90
-theme_override_font_sizes/mono_font_size = 90
-bbcode_enabled = true
-text = "[center][color=#df2020][shake rate=5.0 level=7.0][font_size=90]WARNING![/font_size][/shake][/color][/center]"
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1104319667]
 layout_mode = 1
 anchors_preset = 14
@@ -81,6 +470,7 @@ offset_right = -100.0
 offset_bottom = 244.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_fonts/normal_font = ExtResource("1_osvl0")
 theme_override_fonts/bold_font = ExtResource("1_osvl0")
 theme_override_fonts/bold_italics_font = ExtResource("1_osvl0")
@@ -106,7 +496,17 @@ text = "[wave amp=8.0 freq=1.5]This game contains content that may [color=#df202
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Continue" type="Button" parent="." unique_id=1515108100]
+[node name="Button1" type="Control" parent="." unique_id=1044394192]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Continue" type="Button" parent="Button1" unique_id=1515108100]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -129,7 +529,23 @@ theme_override_font_sizes/font_size = 30
 text = "Continue ->"
 flat = true
 
-[node name="Quit" type="Button" parent="." unique_id=670414079]
+[node name="ASP" type="AudioStreamPlayer" parent="Button1/Continue" unique_id=1022898221]
+stream = ExtResource("3_qbdda")
+
+[node name="AP" type="AnimationPlayer" parent="Button1/Continue" unique_id=1894210300]
+libraries/ = SubResource("AnimationLibrary_rwgkf")
+
+[node name="Button2" type="Control" parent="." unique_id=639640886]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Quit" type="Button" parent="Button2" unique_id=670414079]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -151,3 +567,79 @@ theme_override_fonts/font = ExtResource("1_osvl0")
 theme_override_font_sizes/font_size = 30
 text = "<- Quit"
 flat = true
+
+[node name="ASP" type="AudioStreamPlayer" parent="Button2/Quit" unique_id=1810004962]
+stream = ExtResource("4_rwgkf")
+
+[node name="AP" type="AnimationPlayer" parent="Button2/Quit" unique_id=963094646]
+libraries/ = SubResource("AnimationLibrary_i3gxu")
+
+[node name="Control" type="Control" parent="." unique_id=274804727]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=479045679]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1002.0
+offset_top = 1.0
+offset_right = -1283.5098
+offset_bottom = 3205.204
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5707964
+texture = SubResource("GradientTexture1D_hme1k")
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1394710846]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1001.0
+offset_top = -500.0
+offset_right = 922.0
+offset_bottom = 712.99243
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1705183462]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 77.0
+offset_bottom = 234.0
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_fonts/normal_font = ExtResource("1_osvl0")
+theme_override_fonts/bold_font = ExtResource("1_osvl0")
+theme_override_fonts/bold_italics_font = ExtResource("1_osvl0")
+theme_override_fonts/italics_font = ExtResource("1_osvl0")
+theme_override_fonts/mono_font = ExtResource("1_osvl0")
+theme_override_font_sizes/normal_font_size = 90
+theme_override_font_sizes/bold_font_size = 90
+theme_override_font_sizes/bold_italics_font_size = 90
+theme_override_font_sizes/italics_font_size = 90
+theme_override_font_sizes/mono_font_size = 90
+bbcode_enabled = true
+text = "[center][color=#df2020][shake rate=5.0 level=7.0][font_size=90]WARNING![/font_size][/shake][/color][/center]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AP" type="AnimationPlayer" parent="." unique_id=861975906]
+libraries/ = SubResource("AnimationLibrary_hme1k")
+autoplay = &"starter_anim"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1039375525]
+stream = ExtResource("3_hme1k")
+autoplay = true
+parameters/looping = true

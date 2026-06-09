@@ -17,7 +17,6 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="Deadays: the Illusion"
 run/main_scene="uid://djjlagpbr8yea"
 config/features=PackedStringArray("4.6", "Forward Plus")
-run/max_fps=120
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 config/icon="uid://bamje4ysbbqrg"
@@ -32,7 +31,6 @@ GameStats="*res://Scripts/game_stats.gd"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -127,10 +125,6 @@ inspection={
 "deadzone": 0.2,
 "events": []
 }
-
-[internationalization]
-
-locale/translations=PackedStringArray("res://Localization/translations.en.translation", "res://Localization/translations.ru.translation")
 
 [layer_names]
 

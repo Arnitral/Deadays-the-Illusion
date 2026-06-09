@@ -1,18 +1,94 @@
-[gd_scene load_steps=5 format=3 uid="uid://davv6erj5myjq"]
+[gd_scene format=3 uid="uid://davv6erj5myjq"]
 
 [ext_resource type="Script" uid="uid://cwklfkx7js1io" path="res://Scripts/settings_menu.gd" id="1_0cmel"]
-[ext_resource type="FontFile" uid="uid://dl0w7m45pooel" path="res://Faithful.ttf" id="2_mlw3h"]
+[ext_resource type="FontFile" uid="uid://dy5x0l0og3nv8" path="res://Faithful.ttf" id="2_mlw3h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cmel"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7204674, 0.72046757, 0.7204671, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h437d"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.44291076, 0.44291076, 0.44291073, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d0eu6"]
+font = ExtResource("2_mlw3h")
+font_size = 44
 
 [sub_resource type="LabelSettings" id="LabelSettings_e6mvm"]
 font = ExtResource("2_mlw3h")
 font_size = 36
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlw3h"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.19076231, 0.19076234, 0.19076222, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+shadow_color = Color(0.12591079, 0.12591085, 0.12591082, 0.6)
+shadow_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0eu6"]
+bg_color = Color(0.4313402, 0.43134028, 0.43134007, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_detail = 6
+shadow_color = Color(0.15127608, 0.15127608, 0.15127608, 0.6)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fiqec"]
+bg_color = Color(0.48178947, 0.48178947, 0.4817896, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_detail = 6
+shadow_color = Color(0.15127608, 0.15127608, 0.15127608, 0.6)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qacki"]
+bg_color = Color(0, 0, 0, 0.5)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7204674, 0.72046757, 0.7204671, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8apyq"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8689846, 0.86898506, 0.8689847, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_c1k8q"]
 font = ExtResource("2_mlw3h")
 font_size = 36
 
-[node name="SettingsMenu" type="Control"]
-visible = false
+[sub_resource type="LabelSettings" id="LabelSettings_0cmel"]
+font = ExtResource("2_mlw3h")
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_mlw3h"]
+font = ExtResource("2_mlw3h")
+font_size = 35
+
+[node name="SettingsMenu" type="Control" unique_id=584533989]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,7 +97,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0cmel")
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1387309881]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,9 +105,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-color = Color(0, 0, 0, 0.160784)
+color = Color(0, 0, 0, 0)
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect2"]
+[node name="ColorRect" type="Panel" parent="ColorRect2" unique_id=1604574810]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -40,14 +116,55 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -341.5
 offset_top = -246.5
-offset_right = 341.5
+offset_right = 458.5
 offset_bottom = 246.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 0.588235)
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cmel")
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect2/ColorRect"]
+[node name="SelectionHover" type="Panel" parent="ColorRect2/ColorRect" unique_id=684191514]
+layout_mode = 0
+offset_left = 225.5
+offset_top = 204.5
+offset_right = 799.5
+offset_bottom = 246.5
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h437d")
+
+[node name="SelectionHoverControl" type="Control" parent="ColorRect2/ColorRect" unique_id=374951923]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 225.5
+offset_top = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="ColorRect2/ColorRect" unique_id=667128469]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 44.5
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cmel")
+
+[node name="Label" type="Label" parent="ColorRect2/ColorRect/Panel" unique_id=1690030832]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_d0eu6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect2/ColorRect" unique_id=1185100368]
+visible = false
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -56,7 +173,7 @@ grow_horizontal = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.478431)
 
-[node name="SoundPage" type="Control" parent="ColorRect2/ColorRect"]
+[node name="SoundPage" type="Control" parent="ColorRect2/ColorRect" unique_id=1809495938]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -65,119 +182,117 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MasterVolume" type="Label" parent="ColorRect2/ColorRect/SoundPage"]
-layout_mode = 0
-offset_left = 109.5
-offset_top = 96.5
-offset_right = 344.5
-offset_bottom = 132.5
-text = "MASTER_VOLUME"
-label_settings = SubResource("LabelSettings_e6mvm")
-horizontal_alignment = 1
-
-[node name="MasterVolumeSlider" type="HSlider" parent="ColorRect2/ColorRect/SoundPage/MasterVolume"]
+[node name="VBC" type="VBoxContainer" parent="ColorRect2/ColorRect/SoundPage" unique_id=2044590358]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 246.0
-offset_right = 246.0
+offset_left = 233.5
+offset_top = 44.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MasterVolume" type="Label" parent="ColorRect2/ColorRect/SoundPage/VBC" unique_id=502349710]
+layout_mode = 2
+text = "MASTER VOL"
+label_settings = SubResource("LabelSettings_e6mvm")
+
+[node name="MasterVolumeSlider" type="HSlider" parent="ColorRect2/ColorRect/SoundPage/VBC/MasterVolume" unique_id=186835085]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 190.505
+offset_right = -10.43103
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_mlw3h")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_d0eu6")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_fiqec")
 max_value = 1.0
 step = 0.001
 
-[node name="MusicVolume" type="Label" parent="ColorRect2/ColorRect/SoundPage"]
-layout_mode = 0
-offset_left = 109.5
-offset_top = 147.5
-offset_right = 344.5
-offset_bottom = 183.5
-text = "MUSIC_VOLUME"
+[node name="MusicVolume" type="Label" parent="ColorRect2/ColorRect/SoundPage/VBC" unique_id=1824803535]
+layout_mode = 2
+text = "MUSIC VOL"
 label_settings = SubResource("LabelSettings_e6mvm")
-horizontal_alignment = 1
 
-[node name="MusicVolumeSlider" type="HSlider" parent="ColorRect2/ColorRect/SoundPage/MusicVolume"]
+[node name="MusicVolumeSlider" type="HSlider" parent="ColorRect2/ColorRect/SoundPage/VBC/MusicVolume" unique_id=1608351724]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 246.0
-offset_right = 246.0
+offset_left = 190.505
+offset_right = -10.43103
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_mlw3h")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_d0eu6")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_fiqec")
 max_value = 1.0
 step = 0.001
 
-[node name="PlayerVolume" type="Label" parent="ColorRect2/ColorRect/SoundPage"]
-layout_mode = 0
-offset_left = 109.5
-offset_top = 196.5
-offset_right = 344.5
-offset_bottom = 232.5
-text = "PLAYER_VOLUME"
+[node name="PlayerVolume" type="Label" parent="ColorRect2/ColorRect/SoundPage/VBC" unique_id=1842316296]
+layout_mode = 2
+text = "PLAYER VOL"
 label_settings = SubResource("LabelSettings_e6mvm")
-horizontal_alignment = 1
 
-[node name="PlayerVolumeSlider" type="HSlider" parent="ColorRect2/ColorRect/SoundPage/PlayerVolume"]
+[node name="PlayerVolumeSlider" type="HSlider" parent="ColorRect2/ColorRect/SoundPage/VBC/PlayerVolume" unique_id=549156820]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 246.0
-offset_right = 246.0
+offset_left = 190.505
+offset_right = -10.43103
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_mlw3h")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_d0eu6")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_fiqec")
 max_value = 1.0
 step = 0.001
 
-[node name="ZombieVolume" type="Label" parent="ColorRect2/ColorRect/SoundPage"]
-layout_mode = 0
-offset_left = 109.5
-offset_top = 247.5
-offset_right = 344.5
-offset_bottom = 283.5
-text = "ZOMBIE_VOLUME"
+[node name="ZombieVolume" type="Label" parent="ColorRect2/ColorRect/SoundPage/VBC" unique_id=601797567]
+layout_mode = 2
+text = "ZOMBIE VOL"
 label_settings = SubResource("LabelSettings_e6mvm")
-horizontal_alignment = 1
 
-[node name="ZombieVolumeSlider" type="HSlider" parent="ColorRect2/ColorRect/SoundPage/ZombieVolume"]
+[node name="ZombieVolumeSlider" type="HSlider" parent="ColorRect2/ColorRect/SoundPage/VBC/ZombieVolume" unique_id=1837226722]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 246.0
-offset_right = 246.0
+offset_left = 190.505
+offset_right = -10.43103
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_mlw3h")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_d0eu6")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_fiqec")
 max_value = 1.0
 step = 0.001
 
-[node name="WeaponVolume" type="Label" parent="ColorRect2/ColorRect/SoundPage"]
-layout_mode = 0
-offset_left = 110.5
-offset_top = 295.5
-offset_right = 348.5
-offset_bottom = 331.5
-text = "WEAPON_VOLUME"
+[node name="WeaponVolume" type="Label" parent="ColorRect2/ColorRect/SoundPage/VBC" unique_id=2110811272]
+layout_mode = 2
+text = "WEAPON VOL"
 label_settings = SubResource("LabelSettings_e6mvm")
-horizontal_alignment = 1
 
-[node name="WeaponVolumeSlider" type="HSlider" parent="ColorRect2/ColorRect/SoundPage/WeaponVolume"]
+[node name="WeaponVolumeSlider" type="HSlider" parent="ColorRect2/ColorRect/SoundPage/VBC/WeaponVolume" unique_id=1150843913]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 245.0
-offset_top = 1.0
-offset_right = 245.0
-offset_bottom = 1.0
+offset_left = 190.505
+offset_right = -10.43103
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_mlw3h")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_d0eu6")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_fiqec")
 max_value = 1.0
 step = 0.001
 
-[node name="GamePage" type="Control" parent="ColorRect2/ColorRect"]
+[node name="GamePage" type="Control" parent="ColorRect2/ColorRect" unique_id=552629752]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -185,196 +300,407 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="FOVLabel" type="Label" parent="ColorRect2/ColorRect/GamePage"]
-layout_mode = 0
-offset_left = 109.5
-offset_top = 96.5
-offset_right = 344.5
-offset_bottom = 132.5
+[node name="VBC" type="VBoxContainer" parent="ColorRect2/ColorRect/GamePage" unique_id=650750226]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 233.5
+offset_top = 44.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FOVLabel" type="Label" parent="ColorRect2/ColorRect/GamePage/VBC" unique_id=1030556146]
+layout_mode = 2
 text = "FOV"
 label_settings = SubResource("LabelSettings_e6mvm")
-horizontal_alignment = 1
 
-[node name="FovSlider" type="HSlider" parent="ColorRect2/ColorRect/GamePage/FOVLabel"]
+[node name="FovSlider" type="HSlider" parent="ColorRect2/ColorRect/GamePage/VBC/FOVLabel" unique_id=1491992456]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 246.0
-offset_right = 246.0
+offset_left = 190.505
+offset_right = -10.43103
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_mlw3h")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_d0eu6")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_fiqec")
+min_value = 70.0
+max_value = 110.0
+value = 75.0
+
+[node name="SenseLabel" type="Label" parent="ColorRect2/ColorRect/GamePage/VBC" unique_id=1462219256]
+layout_mode = 2
+text = "SENSITIVITY"
+label_settings = SubResource("LabelSettings_e6mvm")
+vertical_alignment = 1
+
+[node name="SenseSlider" type="HSlider" parent="ColorRect2/ColorRect/GamePage/VBC/SenseLabel" unique_id=1352271813]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 190.505
+offset_right = -10.43103
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_mlw3h")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_d0eu6")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_fiqec")
+min_value = 0.2
+max_value = 5.0
+step = 0.1
+value = 1.0
+
+[node name="AimPointLabel" type="Label" parent="ColorRect2/ColorRect/GamePage/VBC" unique_id=514090128]
+layout_mode = 2
+text = "CROSSHAIR"
+label_settings = SubResource("LabelSettings_e6mvm")
+vertical_alignment = 1
+
+[node name="AimButton" type="Button" parent="ColorRect2/ColorRect/GamePage/VBC/AimPointLabel" unique_id=615448394]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 190.505
+offset_right = -10.43103
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8apyq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qacki")
+
+[node name="AimLabel" type="Label" parent="ColorRect2/ColorRect/GamePage/VBC/AimPointLabel/AimButton" unique_id=692682320]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ON"
+label_settings = SubResource("LabelSettings_e6mvm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FPSLimitLabel" type="Label" parent="ColorRect2/ColorRect/GamePage/VBC" unique_id=523874057]
+layout_mode = 2
+text = "FPS LIMIT"
+label_settings = SubResource("LabelSettings_e6mvm")
+vertical_alignment = 1
+
+[node name="FPSLimitSlider" type="HSlider" parent="ColorRect2/ColorRect/GamePage/VBC/FPSLimitLabel" unique_id=1795726354]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 190.505
+offset_right = -95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_mlw3h")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_d0eu6")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_fiqec")
+min_value = 30.0
+max_value = 300.0
+value = 300.0
+
+[node name="FPSLimitValueLabel" type="Label" parent="ColorRect2/ColorRect/GamePage/VBC/FPSLimitLabel" unique_id=1711143841]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -70.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "140.0 "
+label_settings = SubResource("LabelSettings_e6mvm")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ButtonsPanel" type="Panel" parent="ColorRect2/ColorRect" unique_id=1885503004]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_top = 42.5
+offset_right = 226.5
+offset_bottom = -0.5
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cmel")
+
+[node name="VBC" type="VBoxContainer" parent="ColorRect2/ColorRect" unique_id=404177570]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 0.5
+offset_top = 42.5
+offset_right = 225.5
+offset_bottom = 0.5
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="GameButton" type="Button" parent="ColorRect2/ColorRect/VBC" unique_id=1738805787]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("2_mlw3h")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8apyq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qacki")
+text = "GLOBAL"
+
+[node name="SoundsButton" type="Button" parent="ColorRect2/ColorRect/VBC" unique_id=1147058650]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("2_mlw3h")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8apyq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qacki")
+text = "SOUNDS"
+
+[node name="SoundLabel" type="Label" parent="ColorRect2/ColorRect/VBC" unique_id=2016716943]
+visible = false
+layout_mode = 2
+text = "SOUND_MENU"
+label_settings = SubResource("LabelSettings_c1k8q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ColorRect2/ColorRect/VBC/SoundLabel" unique_id=29831307]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameLabel" type="Label" parent="ColorRect2/ColorRect/VBC" unique_id=763956547]
+visible = false
+layout_mode = 2
+text = "GAME_MENU"
+label_settings = SubResource("LabelSettings_c1k8q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ColorRect2/ColorRect/VBC/GameLabel" unique_id=977966203]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBC2" type="VBoxContainer" parent="ColorRect2/ColorRect" unique_id=1853923107]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 0.5
+offset_top = 42.5
+offset_right = 225.5
+offset_bottom = -0.5
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="CloseButton" type="Button" parent="ColorRect2/ColorRect/VBC2" unique_id=346629701]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("2_mlw3h")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8apyq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qacki")
+text = "CLOSE"
+
+[node name="Control" type="Control" parent="." unique_id=1233602749]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -250.00012
+offset_right = 375.0
+offset_bottom = 250.00012
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Panel" type="Panel" parent="Control" unique_id=208190896]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -250.00012
+offset_right = 375.0
+offset_bottom = 250.00012
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cmel")
+
+[node name="Panel2" type="Panel" parent="Control/Panel" unique_id=1874376315]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 60.000122
+offset_right = 227.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cmel")
+
+[node name="VBC" type="VBoxContainer" parent="Control/Panel" unique_id=1245091159]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 60.000122
+offset_right = 227.0
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="GlobalButton" type="Button" parent="Control/Panel/VBC" unique_id=1023100439]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mlw3h")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8apyq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qacki")
+text = "Global"
+
+[node name="WindowButton" type="Button" parent="Control/Panel/VBC" unique_id=595455320]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mlw3h")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8apyq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qacki")
+text = "Window"
+
+[node name="SoundsButton" type="Button" parent="Control/Panel/VBC" unique_id=738507285]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mlw3h")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8apyq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qacki")
+text = "Sound"
+
+[node name="Panel" type="Panel" parent="Control/Panel" unique_id=360115549]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 60.000122
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cmel")
+
+[node name="Label" type="Label" parent="Control/Panel/Panel" unique_id=1100852301]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_0cmel")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" type="Control" parent="Control/Panel" unique_id=1779271145]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 230.0
+offset_top = 63.000122
+offset_right = -2.0
+offset_bottom = -2.000122
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Global" type="VBoxContainer" parent="Control/Panel/Settings" unique_id=940004540]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FOVLabel" type="Label" parent="Control/Panel/Settings/Global" unique_id=16863265]
+layout_mode = 2
+text = "FOV"
+label_settings = SubResource("LabelSettings_mlw3h")
+vertical_alignment = 1
+
+[node name="FovSlider" type="HSlider" parent="Control/Panel/Settings/Global/FOVLabel" unique_id=1019126894]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 232.0
+offset_right = -25.0
 grow_horizontal = 2
 grow_vertical = 2
 min_value = 70.0
 max_value = 110.0
 value = 75.0
 
-[node name="SenseLabel" type="Label" parent="ColorRect2/ColorRect/GamePage"]
-layout_mode = 0
-offset_left = 109.5
-offset_top = 147.5
-offset_right = 344.5
-offset_bottom = 183.5
+[node name="SenseLabel" type="Label" parent="Control/Panel/Settings/Global" unique_id=992922465]
+layout_mode = 2
 text = "SENSIVITY"
-label_settings = SubResource("LabelSettings_e6mvm")
-horizontal_alignment = 1
+label_settings = SubResource("LabelSettings_mlw3h")
 vertical_alignment = 1
 
-[node name="SenseSlider" type="HSlider" parent="ColorRect2/ColorRect/GamePage/SenseLabel"]
+[node name="SenseSlider" type="HSlider" parent="Control/Panel/Settings/Global/SenseLabel" unique_id=1132364962]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 246.0
-offset_right = 246.0
+offset_left = 232.0
+offset_right = -25.0
 grow_horizontal = 2
 grow_vertical = 2
-min_value = 0.2
-max_value = 5.0
-step = 0.1
-value = 1.0
+min_value = 70.0
+max_value = 110.0
+value = 75.0
 
-[node name="AimPointLabel" type="Label" parent="ColorRect2/ColorRect/GamePage"]
-layout_mode = 0
-offset_left = 109.5
-offset_top = 190.5
-offset_right = 344.5
-offset_bottom = 226.5
-text = "CROSSHAIR"
-label_settings = SubResource("LabelSettings_e6mvm")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AimButton" type="Button" parent="ColorRect2/ColorRect/GamePage/AimPointLabel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 246.0
-offset_right = 246.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="AimLabel" type="Label" parent="ColorRect2/ColorRect/GamePage/AimPointLabel/AimButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "BUTTON_ON"
-label_settings = SubResource("LabelSettings_e6mvm")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FPSLimitLabel" type="Label" parent="ColorRect2/ColorRect/GamePage"]
-layout_mode = 0
-offset_left = 109.5
-offset_top = 232.5
-offset_right = 344.5
-offset_bottom = 268.5
-text = "LIMIT_FPS"
-label_settings = SubResource("LabelSettings_e6mvm")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FPSLimitSlider" type="HSlider" parent="ColorRect2/ColorRect/GamePage/FPSLimitLabel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 246.0
-offset_right = 246.0
-grow_horizontal = 2
-grow_vertical = 2
-min_value = 30.0
-max_value = 300.0
-value = 300.0
-
-[node name="FPSLimitValueLabel" type="Label" parent="ColorRect2/ColorRect/GamePage"]
-layout_mode = 0
-offset_left = 357.5
-offset_top = 265.5
-offset_right = 592.5
-offset_bottom = 301.5
-text = "100"
-label_settings = SubResource("LabelSettings_e6mvm")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ExitLabel" type="Label" parent="ColorRect2/ColorRect"]
-layout_mode = 1
-offset_right = 122.0
-offset_bottom = 40.0
-text = "EXIT_MENU"
-label_settings = SubResource("LabelSettings_c1k8q")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Button" type="Button" parent="ColorRect2/ColorRect/ExitLabel"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_default_cursor_shape = 2
-
-[node name="SoundLabel" type="Label" parent="ColorRect2/ColorRect"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -203.5
-offset_right = -81.5
-offset_bottom = 39.0
-grow_horizontal = 2
-text = "SOUND_MENU"
-label_settings = SubResource("LabelSettings_c1k8q")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Button" type="Button" parent="ColorRect2/ColorRect/SoundLabel"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="GameLabel" type="Label" parent="ColorRect2/ColorRect"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -60.5
-offset_right = 61.5
-offset_bottom = 40.0
-grow_horizontal = 2
-text = "GAME_MENU"
-label_settings = SubResource("LabelSettings_c1k8q")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Button" type="Button" parent="ColorRect2/ColorRect/GameLabel"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[connection signal="value_changed" from="ColorRect2/ColorRect/SoundPage/MasterVolume/MasterVolumeSlider" to="." method="_on_volume_slider_value_changed"]
-[connection signal="value_changed" from="ColorRect2/ColorRect/SoundPage/MusicVolume/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
-[connection signal="value_changed" from="ColorRect2/ColorRect/SoundPage/PlayerVolume/PlayerVolumeSlider" to="." method="_on_player_volume_slider_value_changed"]
-[connection signal="value_changed" from="ColorRect2/ColorRect/SoundPage/ZombieVolume/ZombieVolumeSlider" to="." method="_on_zombie_volume_slider_value_changed"]
-[connection signal="value_changed" from="ColorRect2/ColorRect/SoundPage/WeaponVolume/WeaponVolumeSlider" to="." method="_on_weapon_volume_slider_value_changed"]
-[connection signal="value_changed" from="ColorRect2/ColorRect/GamePage/FOVLabel/FovSlider" to="." method="_on_fov_slider_value_changed"]
-[connection signal="value_changed" from="ColorRect2/ColorRect/GamePage/SenseLabel/SenseSlider" to="." method="_on_sense_slider_value_changed"]
-[connection signal="pressed" from="ColorRect2/ColorRect/GamePage/AimPointLabel/AimButton" to="." method="_on_aim_button_pressed"]
-[connection signal="value_changed" from="ColorRect2/ColorRect/GamePage/FPSLimitLabel/FPSLimitSlider" to="." method="_on_fps_limit_slider_value_changed"]
-[connection signal="pressed" from="ColorRect2/ColorRect/ExitLabel/Button" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="ColorRect2/ColorRect/SoundLabel/Button" to="." method="_on_sound_button_pressed"]
-[connection signal="pressed" from="ColorRect2/ColorRect/GameLabel/Button" to="." method="_on_game_button_pressed"]
+[connection signal="value_changed" from="ColorRect2/ColorRect/SoundPage/VBC/MasterVolume/MasterVolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="value_changed" from="ColorRect2/ColorRect/SoundPage/VBC/MusicVolume/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="ColorRect2/ColorRect/SoundPage/VBC/PlayerVolume/PlayerVolumeSlider" to="." method="_on_player_volume_slider_value_changed"]
+[connection signal="value_changed" from="ColorRect2/ColorRect/SoundPage/VBC/ZombieVolume/ZombieVolumeSlider" to="." method="_on_zombie_volume_slider_value_changed"]
+[connection signal="value_changed" from="ColorRect2/ColorRect/SoundPage/VBC/WeaponVolume/WeaponVolumeSlider" to="." method="_on_weapon_volume_slider_value_changed"]
+[connection signal="value_changed" from="ColorRect2/ColorRect/GamePage/VBC/FOVLabel/FovSlider" to="." method="_on_fov_slider_value_changed"]
+[connection signal="value_changed" from="ColorRect2/ColorRect/GamePage/VBC/SenseLabel/SenseSlider" to="." method="_on_sense_slider_value_changed"]
+[connection signal="pressed" from="ColorRect2/ColorRect/GamePage/VBC/AimPointLabel/AimButton" to="." method="_on_aim_button_pressed"]
+[connection signal="value_changed" from="ColorRect2/ColorRect/GamePage/VBC/FPSLimitLabel/FPSLimitSlider" to="." method="_on_fps_limit_slider_value_changed"]
+[connection signal="pressed" from="ColorRect2/ColorRect/VBC/GameButton" to="." method="_on_game_button_pressed"]
+[connection signal="pressed" from="ColorRect2/ColorRect/VBC/SoundsButton" to="." method="_on_sound_button_pressed"]
+[connection signal="pressed" from="ColorRect2/ColorRect/VBC/SoundLabel/Button" to="." method="_on_sound_button_pressed"]
+[connection signal="pressed" from="ColorRect2/ColorRect/VBC/GameLabel/Button" to="." method="_on_game_button_pressed"]
+[connection signal="pressed" from="ColorRect2/ColorRect/VBC2/CloseButton" to="." method="_on_exit_button_pressed"]
