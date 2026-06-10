@@ -466,6 +466,72 @@ text = "PUT AN END TO"
 alignment = 0
 expand_icon = true
 
+[node name="VBCSC" type="VBoxContainer" parent="CanvasLayer/Menu" unique_id=1142622105]
+visible = false
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 51.0
+offset_top = 117.0
+offset_right = 430.0
+grow_vertical = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Chapter1" type="Button" parent="CanvasLayer/Menu/VBCSC" unique_id=190398128]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("17_nvx4o")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8apyq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qacki")
+text = "CHAPTERR 1"
+alignment = 0
+expand_icon = true
+
+[node name="Chapter2" type="Button" parent="CanvasLayer/Menu/VBCSC" unique_id=1249651458]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("17_nvx4o")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8apyq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qacki")
+disabled = true
+text = "CHAPTERR 2"
+alignment = 0
+expand_icon = true
+
+[node name="Chapter3" type="Button" parent="CanvasLayer/Menu/VBCSC" unique_id=1874934911]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("17_nvx4o")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8apyq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qacki")
+disabled = true
+text = "CHAPTERR 3"
+alignment = 0
+expand_icon = true
+
+[node name="Back" type="Button" parent="CanvasLayer/Menu/VBCSC" unique_id=547498338]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("17_nvx4o")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jnwcx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_npf8s")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qacki")
+text = "BACK TO MENU"
+alignment = 0
+expand_icon = true
+
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Menu" unique_id=1660984115]
 layout_mode = 1
 offset_left = 43.0

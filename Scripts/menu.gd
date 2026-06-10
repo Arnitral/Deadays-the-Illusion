@@ -10,6 +10,8 @@ extends Control
 @onready var credits_menu: Control = $"../CreditsMenu"
 var game_scene = null
 
+var select_chapter_menu: bool = false
+
 func _ready():
 	ResourceLoader.load_threaded_request("res://Scenes/world.tscn")
 	$VBC/Quit.pressed.connect(func():
@@ -26,7 +28,9 @@ func _ready():
 			settings_menu.hide()
 	)
 	$VBC/SelectChapter.pressed.connect(func():
-		pass
+		select_chapter_menu = true
+		$VBCSC.visible = select_chapter_menu
+		$VBC.visible = (select_chapter_menu != true)
 	)
 	# effectss
 	$VBC/Quit.mouse_entered.connect(func():
@@ -40,6 +44,34 @@ func _ready():
 	)
 	$VBC/SelectChapter.mouse_entered.connect(func():
 		knp_click.play()
+	)
+	# Select Chapter Menu
+	$VBCSC/Back.pressed.connect(func():
+		select_chapter_menu = false
+		$VBCSC.visible = select_chapter_menu
+		$VBC.visible = (select_chapter_menu != true)
+	)
+	$VBCSC/Chapter1.pressed.connect(func():
+		pass
+	)
+	$VBCSC/Chapter2.pressed.connect(func():
+		pass
+	)
+	$VBCSC/Chapter3.pressed.connect(func():
+		pass
+	)
+	# Effects
+	$VBCSC/Back.mouse_entered.connect(func():
+		knp_click.play()
+	)
+	$VBCSC/Chapter1.mouse_entered.connect(func():
+		knp_click.play()
+	)
+	$VBCSC/Chapter2.mouse_entered.connect(func():
+		pass#knp_click.play()
+	)
+	$VBCSC/Chapter3.mouse_entered.connect(func():
+		pass#knp_click.play()
 	)
 
 #func _on_start_button_pressed() -> void:
