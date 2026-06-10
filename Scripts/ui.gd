@@ -2,9 +2,9 @@ extends Control
 @onready var wave_progress_bar: TextureProgressBar = $WaveProgressBar
 @onready var wave_label: Label = $WaveLabel
 @onready var health_bar: TextureProgressBar = $HealthBar
-@onready var health_label: Label = $HealthBar/HealthLabel
+@onready var health_label: Label = $HealthTexture/HealthLabel
 @onready var ammo_bar: TextureProgressBar = $AmmoBar
-@onready var ammo_label: Label = $AmmoBar/AmmoLabel
+@onready var ammo_label: Label = $AmmoLabel
 @onready var health_manager: Node3D = %HealthManager
 @onready var weapon_manager: Node3D = %WeaponManager
 @onready var wave_manager = get_tree().get_first_node_in_group("wave_manager")
@@ -12,6 +12,12 @@ extends Control
 @onready var blood_screen: TextureRect = $BloodScreen
 @onready var wave_timer_label: Label = $TimerLabel
 
+@onready var pistol_mesh = $AmmoModels/SubViewport/pistol_ammo
+@onready var shotgun_mesh = $AmmoModels/SubViewport/shotgun_ammobox
+@onready var smg_mesh = $AmmoModels/SubViewport/ammobox
+@onready var knife_mesh = $AmmoModels/SubViewport/knife
+
+var last_loaded_weapon_name: String = ""
 
 func _ready():
 	wave_manager.zombies_count_changed.connect(update_wave_display)
@@ -52,6 +58,32 @@ func update_ammo_display(ammo_amnt: int, max_ammo: int):
 		ammo_label.text = "%s" % ammo_amnt
 	ammo_bar.max_value = max_ammo
 	ammo_bar.value = ammo_amnt
+	_update_ammo_3d_mesh()
+
+func _update_ammo_3d_mesh():
+	if not weapon_manager or not weapon_manager.cur_weapon:
+		return
+		
+	var current_weapon_name = weapon_manager.cur_weapon.name.to_lower()
+	
+	if current_weapon_name == last_loaded_weapon_name:
+		return
+		
+	last_loaded_weapon_name = current_weapon_name
+	
+	pistol_mesh.visible = false
+	shotgun_mesh.visible = false
+	smg_mesh.visible = false
+	knife_mesh.visible = false
+	
+	if "knife" in current_weapon_name or weapon_manager.cur_weapon.ammo < 0:
+		knife_mesh.visible = true
+	elif "makarov" in current_weapon_name:
+		pistol_mesh.visible = true
+	elif "shotgun" in current_weapon_name:
+		shotgun_mesh.visible = true
+	else:
+		smg_mesh.visible = true
 
 func update_wave_display(number_of_wave: int, is_wave_active: bool, total_enemies: int, zombies_alive: int):
 	if is_wave_active:

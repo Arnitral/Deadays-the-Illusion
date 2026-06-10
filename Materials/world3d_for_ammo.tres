@@ -1,0 +1,6 @@
+[gd_resource type="World3D" format=3 uid="uid://b071fynk8kjls"]
+
+[ext_resource type="Environment" uid="uid://c4o73d222ip3f" path="res://Materials/env_for_ammo.tres" id="1_d70g7"]
+
+[resource]
+environment = ExtResource("1_d70g7")
