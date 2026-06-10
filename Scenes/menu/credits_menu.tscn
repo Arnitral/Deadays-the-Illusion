@@ -1,0 +1,246 @@
+[gd_scene format=3 uid="uid://cj3tefignhmaw"]
+
+[ext_resource type="Script" uid="uid://bgtsrdhcy8e33" path="res://Scripts/MainMenu/credits_menu.gd" id="1_bor7f"]
+[ext_resource type="FontFile" uid="uid://dy5x0l0og3nv8" path="res://Faithful.ttf" id="2_1op1f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cmel"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7204674, 0.72046757, 0.7204671, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d0eu6"]
+font = ExtResource("2_1op1f")
+font_size = 44
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qacki"]
+bg_color = Color(0, 0, 0, 0.5)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7204674, 0.72046757, 0.7204671, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8apyq"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8689846, 0.86898506, 0.8689847, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bor7f"]
+font = ExtResource("2_1op1f")
+font_size = 44
+
+[node name="CreditsMenu" type="Control" unique_id=584533989]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_bor7f")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1387309881]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="ColorRect" type="Panel" parent="ColorRect2" unique_id=1604574810]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -341.5
+offset_top = -246.5
+offset_right = 458.5
+offset_bottom = 246.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cmel")
+
+[node name="Panel" type="Panel" parent="ColorRect2/ColorRect" unique_id=667128469]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 44.5
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cmel")
+
+[node name="Label" type="Label" parent="ColorRect2/ColorRect/Panel" unique_id=1690030832]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CREDITS"
+label_settings = SubResource("LabelSettings_d0eu6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="ColorRect2/ColorRect/Panel" unique_id=1644031731]
+layout_mode = 0
+offset_right = 133.5
+offset_bottom = 44.0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("2_1op1f")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8apyq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qacki")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qacki")
+text = "CLOSE"
+
+[node name="Dev2Panel" type="Panel" parent="ColorRect2/ColorRect" unique_id=1885503004]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 42.5
+offset_right = -400.0
+offset_bottom = -0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cmel")
+
+[node name="DevNamePanel" type="Panel" parent="ColorRect2/ColorRect/Dev2Panel" unique_id=1361692638]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 44.5
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cmel")
+
+[node name="Name" type="Label" parent="ColorRect2/ColorRect/Dev2Panel/DevNamePanel" unique_id=616781252]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ArnItraL"
+label_settings = SubResource("LabelSettings_bor7f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBC" type="VBoxContainer" parent="ColorRect2/ColorRect/Dev2Panel" unique_id=1033508785]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect2/ColorRect/Dev2Panel/VBC" unique_id=1208891919]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_1op1f")
+theme_override_fonts/bold_font = ExtResource("2_1op1f")
+theme_override_fonts/bold_italics_font = ExtResource("2_1op1f")
+theme_override_fonts/italics_font = ExtResource("2_1op1f")
+theme_override_fonts/mono_font = ExtResource("2_1op1f")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "[center]HE IS THE [shake rate=20.0 level=5 connected=1][color=red]MOD CREATOR[/color][/shake] OF
+[shake rate=15.0 level=4 connected=1]< THIS PROJECT >[/shake]
+
+[shake rate=12.0 level=3 connected=1][color=red]● PROFILE INFO ●[/color][/shake]
+
+[b]ROLES IN DEVELOPMENT:[/b]
+[color=#aaaaaa]GDSCRIPT EDITING // UI DESIGN // AUDIO[/color]
+
+[shake rate=12.0 level=3 connected=1][color=red]● NETWORK LOGS ●[/color][/shake]
+
+[b]TELEGRAM:[/b] [url=https://t.me/ArnItraL][color=#dfdfdf]∞@ArnItraL[/color][/url]
+[b]DISCORD:[/b] [url=https://discord.com/users/1000368941010518036][color=#dfdfdf]∞LINK[/color][/url]
+[b]GITHUB:[/b] [url=https://github.com/arnitral][color=#dfdfdf]∞arnitral[/color][/url][/center]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Dev1Panel" type="Panel" parent="ColorRect2/ColorRect" unique_id=1458196067]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 397.5
+offset_top = 42.5
+offset_right = -0.5
+offset_bottom = -0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cmel")
+
+[node name="DevNamePanel" type="Panel" parent="ColorRect2/ColorRect/Dev1Panel" unique_id=1959103012]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 44.5
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0cmel")
+
+[node name="Name" type="Label" parent="ColorRect2/ColorRect/Dev1Panel/DevNamePanel" unique_id=1461125591]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "OKNO"
+label_settings = SubResource("LabelSettings_bor7f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBC" type="VBoxContainer" parent="ColorRect2/ColorRect/Dev1Panel" unique_id=250291094]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect2/ColorRect/Dev1Panel/VBC" unique_id=1735407454]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_1op1f")
+theme_override_fonts/bold_font = ExtResource("2_1op1f")
+theme_override_fonts/bold_italics_font = ExtResource("2_1op1f")
+theme_override_fonts/italics_font = ExtResource("2_1op1f")
+theme_override_fonts/mono_font = ExtResource("2_1op1f")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "[center]HE IS THE [shake rate=20.0 level=5 connected=1][color=red]CREATOR[/color][/shake] OF
+[shake rate=15.0 level=4 connected=1]< THIS GAME >[/shake]
+
+[shake rate=12.0 level=3 connected=1][color=red]● ORIGINAL CREATION ●[/color][/shake]
+
+[b]ROLES IN DEVELOPMENT:[/b]
+[color=#aaaaaa]GAME DESIGN // BASE CODE
+// MAP DESIGN[/color]
+
+[shake rate=12.0 level=3 connected=1][color=red]● CREATOR LINKS ●[/color][/shake]
+
+[b]YOUTUBE:[/b] [url=https://www.youtube.com/@OKNO][color=#dfdfdf]∞OKNO[/color][/url]
+[b]TELEGRAM:[/b] [url=https://t.me/oknogmdv][color=#dfdfdf]∞OKNO CHANNEL[/color][/url]
+[b]TIKTOK:[/b] [url=https://www.tiktok.com/@oknogmdv][color=#dfdfdf]∞@oknogmdv[/color][/url][/center]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[connection signal="meta_clicked" from="ColorRect2/ColorRect/Dev2Panel/VBC/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]

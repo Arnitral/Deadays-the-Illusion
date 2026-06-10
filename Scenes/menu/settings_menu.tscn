@@ -80,14 +80,6 @@ border_color = Color(0.8689846, 0.86898506, 0.8689847, 1)
 font = ExtResource("2_mlw3h")
 font_size = 36
 
-[sub_resource type="LabelSettings" id="LabelSettings_0cmel"]
-font = ExtResource("2_mlw3h")
-font_size = 60
-
-[sub_resource type="LabelSettings" id="LabelSettings_mlw3h"]
-font = ExtResource("2_mlw3h")
-font_size = 35
-
 [node name="SettingsMenu" type="Control" unique_id=584533989]
 layout_mode = 3
 anchors_preset = 15
@@ -95,6 +87,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_0cmel")
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1387309881]
@@ -104,7 +97,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
 [node name="ColorRect" type="Panel" parent="ColorRect2" unique_id=1604574810]
@@ -528,167 +521,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_8apyq")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_qacki")
 theme_override_styles/focus = SubResource("StyleBoxFlat_qacki")
 text = "CLOSE"
-
-[node name="Control" type="Control" parent="." unique_id=1233602749]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -375.0
-offset_top = -250.00012
-offset_right = 375.0
-offset_bottom = 250.00012
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-
-[node name="Panel" type="Panel" parent="Control" unique_id=208190896]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -375.0
-offset_top = -250.00012
-offset_right = 375.0
-offset_bottom = 250.00012
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-theme_override_styles/panel = SubResource("StyleBoxFlat_0cmel")
-
-[node name="Panel2" type="Panel" parent="Control/Panel" unique_id=1874376315]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_top = 60.000122
-offset_right = 227.0
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_0cmel")
-
-[node name="VBC" type="VBoxContainer" parent="Control/Panel" unique_id=1245091159]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_top = 60.000122
-offset_right = 227.0
-grow_vertical = 2
-theme_override_constants/separation = 0
-
-[node name="GlobalButton" type="Button" parent="Control/Panel/VBC" unique_id=1023100439]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_mlw3h")
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_qacki")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_qacki")
-theme_override_styles/hover = SubResource("StyleBoxFlat_8apyq")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_qacki")
-theme_override_styles/focus = SubResource("StyleBoxFlat_qacki")
-text = "Global"
-
-[node name="WindowButton" type="Button" parent="Control/Panel/VBC" unique_id=595455320]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_mlw3h")
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_qacki")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_qacki")
-theme_override_styles/hover = SubResource("StyleBoxFlat_8apyq")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_qacki")
-theme_override_styles/focus = SubResource("StyleBoxFlat_qacki")
-text = "Window"
-
-[node name="SoundsButton" type="Button" parent="Control/Panel/VBC" unique_id=738507285]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_mlw3h")
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_qacki")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_qacki")
-theme_override_styles/hover = SubResource("StyleBoxFlat_8apyq")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_qacki")
-theme_override_styles/focus = SubResource("StyleBoxFlat_qacki")
-text = "Sound"
-
-[node name="Panel" type="Panel" parent="Control/Panel" unique_id=360115549]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 60.000122
-grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_0cmel")
-
-[node name="Label" type="Label" parent="Control/Panel/Panel" unique_id=1100852301]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "SETTINGS"
-label_settings = SubResource("LabelSettings_0cmel")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Settings" type="Control" parent="Control/Panel" unique_id=1779271145]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 230.0
-offset_top = 63.000122
-offset_right = -2.0
-offset_bottom = -2.000122
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Global" type="VBoxContainer" parent="Control/Panel/Settings" unique_id=940004540]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="FOVLabel" type="Label" parent="Control/Panel/Settings/Global" unique_id=16863265]
-layout_mode = 2
-text = "FOV"
-label_settings = SubResource("LabelSettings_mlw3h")
-vertical_alignment = 1
-
-[node name="FovSlider" type="HSlider" parent="Control/Panel/Settings/Global/FOVLabel" unique_id=1019126894]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 232.0
-offset_right = -25.0
-grow_horizontal = 2
-grow_vertical = 2
-min_value = 70.0
-max_value = 110.0
-value = 75.0
-
-[node name="SenseLabel" type="Label" parent="Control/Panel/Settings/Global" unique_id=992922465]
-layout_mode = 2
-text = "SENSIVITY"
-label_settings = SubResource("LabelSettings_mlw3h")
-vertical_alignment = 1
-
-[node name="SenseSlider" type="HSlider" parent="Control/Panel/Settings/Global/SenseLabel" unique_id=1132364962]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 232.0
-offset_right = -25.0
-grow_horizontal = 2
-grow_vertical = 2
-min_value = 70.0
-max_value = 110.0
-value = 75.0
 
 [connection signal="value_changed" from="ColorRect2/ColorRect/SoundPage/VBC/MasterVolume/MasterVolumeSlider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="value_changed" from="ColorRect2/ColorRect/SoundPage/VBC/MusicVolume/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]

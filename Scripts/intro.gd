@@ -20,4 +20,4 @@ func _input(event: InputEvent) -> void:
 		
 func skip_intro():
 	set_process_input(false)
-	get_tree().change_scene_to_file("res://Scenes/mainmenu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/menu/mainmenu.tscn")

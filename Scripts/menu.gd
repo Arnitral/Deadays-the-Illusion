@@ -7,6 +7,7 @@ extends Control
 @onready var settings_label: Label = $ColorRect/SettingsButton/SettingsLabel
 
 @onready var settings_menu: Control = $"../SettingsMenu"
+@onready var credits_menu: Control = $"../CreditsMenu"
 var game_scene = null
 
 func _ready():
@@ -16,9 +17,13 @@ func _ready():
 	)
 	$VBC/Settings.pressed.connect(func():
 		settings_menu.visible = !settings_menu.visible
+		if credits_menu.visible == true:
+			credits_menu.hide()
 	)
 	$VBC/Credits.pressed.connect(func():
-		pass
+		credits_menu.visible = !credits_menu.visible
+		if settings_menu.visible == true:
+			settings_menu.hide()
 	)
 	$VBC/SelectChapter.pressed.connect(func():
 		pass
